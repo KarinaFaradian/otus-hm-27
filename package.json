@@ -1,5 +1,18 @@
 {
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts && tsc --noEmit",
+    "lint:fix": "eslint . --fix --ext .js,.ts"
+  },
+  "lint-staged": {
+    "*.js,*.ts": [
+      "eslint --cache --fix --ext .js,.ts"
+    ]
   }
 }
